@@ -6,15 +6,26 @@ export const NeutralPage = () =>{
     const { isAuthenticated, user } = useAuth0();
     const message = {
         sinRegistrar : {
-            text: "Bienvenido, Usuario. resgistrate arriba a la derecha para que puedas chatear y ver tu nombre en la tabla de puntos de mi pequeño juego"
+            text: "Bienvenido, Usuario. Resgistrate arriba a la derecha para que puedas chatear y ver tu nombre en la tabla de puntos de mi pequeño juego"
         },
         registrado: {
-            text: `Bienvenido, ${user ? user.name : "mi querido invitado,"} ansio y espero que te diviertas`
+            text: `Hola, ${user ? user.email_verified ? user.name : user.nickname : "mi querido invitado,"} ansio y espero que te diviertas`
         }
     };
 
-
     return(
-        <h1>Goodbye</h1>
+        <div style={{"position" : "relative", "display" : "inline-block", "textAlign" : "center"}}  >
+            <img src={BACKGROUND} style={{"width" : "100vw", "height" : "91vh"}} alt="fondo" />
+            <div style={{"position" : "absolute", "top" : "30%", "left" : "60%", "width" : "28%", "height" : "auto"}}>
+                <p style={{"fontWeight" : "bold"}}>
+                {isAuthenticated
+                ?
+                message.registrado.text
+                :
+                message.sinRegistrar.text
+                }
+            </p>
+            </div>
+        </div>
     );
 };
