@@ -22,16 +22,16 @@ export const Form = () =>{
         });
     };
 
-    const handleReset = () =>{
+    /*const handleReset = () =>{
         setData(refData);
-    };
+    };*/
 
     return(
         <div>
-        <h4>Identificate, has tu comentario y envialo</h4>
+        <h4 style={{"fontWeight" : "bold"}}>Identificate, has tu comentario y envialo</h4>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3 row">
-                    <label htmlFor="inputName" className="col-sm-2 col-form-label bold">Name</label>
+                    <label htmlFor="inputName" className="col-sm-2 col-form-label bold" style={{"fontWeight" : "bold"}}>Name</label>
                     <div className="col-sm-10">
                         <input 
                         type="text" 
@@ -44,7 +44,7 @@ export const Form = () =>{
                     </div>
                 </div>
                 <div className="mb-3 row">
-                    <label htmlFor="inputEmail" className="col-sm-2 col-form-label bold">Email Address</label>
+                    <label htmlFor="inputEmail" className="col-sm-2 col-form-label bold" style={{"fontWeight" : "bold"}}>Email Address</label>
                     <div className="col-sm-10">
                         <input 
                         type="email" 
@@ -57,7 +57,7 @@ export const Form = () =>{
                     </div>
                 </div>
                 <div className="mb-3 row">
-                    <label htmlFor="inputAsunt" className="col-sm-2 col-form-label bold">Asunt</label>
+                    <label htmlFor="inputAsunt" className="col-sm-2 col-form-label bold" style={{"fontWeight" : "bold"}}>Asunt</label>
                     <div className="col-sm-10">
                         <input 
                         type="text" 
@@ -70,7 +70,7 @@ export const Form = () =>{
                     </div>
                 </div>
                 <div className="mb-3 row">
-                    <label htmlFor="inputComment" className="col-sm-2 col-form-label bold">Comment</label>
+                    <label htmlFor="inputComment" className="col-sm-2 col-form-label bold" style={{"fontWeight" : "bold"}}>Comment</label>
                     <div className="col-sm-10">
                         <textarea 
                         className="form-control" 

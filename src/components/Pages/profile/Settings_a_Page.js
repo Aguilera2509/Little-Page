@@ -1,10 +1,10 @@
-import { Base } from "./backgroundPage/image";
+import { Base } from "../backgroundPage/image";
 
 export const SettingPage = () =>{
 
     const title = "Settings Account";
 
     return(
-        <Base title={title} />
+        <Base content={title} />
     );
 };

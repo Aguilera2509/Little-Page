@@ -6,16 +6,18 @@ export const NeutralPage = () =>{
     const { isAuthenticated, user } = useAuth0();
     const message = {
         sinRegistrar : {
-            text: "Bienvenido, Usuario. Resgistrate arriba a la derecha para que puedas chatear y ver tu nombre en la tabla de puntos de mi pequeño juego"
+            text: "Bienvenido, Usuario. Registrate arriba a la derecha para que puedas chatear y ver tu nombre en la tabla de puntos de mi pequeño juego"
         },
         registrado: {
             text: `Hola, ${user ? user.email_verified ? user.name : user.nickname : "mi querido invitado,"} ansio y espero que te diviertas`
         }
     };
 
+    //Poner un Footer con derechos de autor, yo que se.
+
     return(
         <div style={{"position" : "relative", "display" : "inline-block", "textAlign" : "center"}}  >
-            <img src={BACKGROUND} style={{"width" : "100vw", "height" : "91vh"}} alt="fondo" />
+            <img src={BACKGROUND} style={{"width" : "100vw", "height" : "92vh"}} alt="fondo" />
             <div style={{"position" : "absolute", "top" : "30%", "left" : "60%", "width" : "28%", "height" : "auto"}}>
                 <p style={{"fontWeight" : "bold"}}>
                 {isAuthenticated

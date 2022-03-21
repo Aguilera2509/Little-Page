@@ -1,13 +1,13 @@
 import { Route, Routes } from "react-router-dom";
-import { AboutPage } from "../AboutPage";
-import { ChatPage } from "../ChatPage";
-import { ContactPage } from "../ContactPage";
-import { HomePage } from "../HomePage";
-import { NeutralPage } from "../NeutralPage";
+import { AboutPage } from "../about/AboutPage";
+import { ChatPage } from "../chat/ChatPage";
+import { ContactPage } from "../contact/ContactPage";
+import { HomePage } from "../home/HomePage";
+import { NeutralPage } from "../NeutralPage"
 import { NotFound } from "../NotFoundPage";
-import { ProfilePage } from "../ProfilePage";
-import { SettingPage } from "../Settings_a_Page";
-import { WiddlePage } from "../WiddlePage";
+import { ProfilePage } from "../profile/ProfilePage";
+import { SettingPage } from "../profile/Settings_a_Page";
+import { WiddlePage } from "../widdle/WiddlePage";
 
 export const RoutesPage = () =>{
     return(
