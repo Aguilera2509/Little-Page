@@ -59,13 +59,15 @@ export const ChatLive = () => {
 
     return(
         <div>
-            <ul>
-                {allMessages.map(el => el.map(el => <ReadAllMessages key={el.id} data={el} />))}
-            </ul>
+            <div style={{"backgroundColor" : "lightcyan", "opacity" : "0.8" , "width" : "50vw", "height" : "50vh", "overflowY" : "auto", "textAlign" : "left" }}>
+                <ul>
+                    {allMessages.map(el => el.map(el => <ReadAllMessages key={el.id} data={el} />))}
+                </ul>
+            </div>
 
             <form onSubmit={handleSubmit}>
-                <input type="text" name="message" autoComplete="off" value={messValue.message} onChange={handleChange} />
-                <button type="submit">Enviar</button>
+                <input type="text" className="form-control" name="message" autoComplete="off" value={messValue.message} onChange={handleChange} placeholder="Escribe tu mensaje" />
+                <button type="submit" className="btn btn-dark" >Enviar</button>
             </form>
         </div>
     );

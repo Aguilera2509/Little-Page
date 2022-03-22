@@ -1,4 +1,7 @@
+import { useAuth0 } from "@auth0/auth0-react";
 import { useState } from "react";
+import { formSubmit } from "./fetch";
+import { Loader } from "./loader";
 
 const refData = {
     Name : "",
@@ -10,9 +13,19 @@ const refData = {
 export const Form = () =>{
 
     const [data, setData] = useState(refData);
+    const [loader, setLoader] = useState(false);
+    const { user } = useAuth0();
 
     function handleSubmit(e){
         e.preventDefault();
+        setLoader(true);
+        
+        //Usar algunas validaciones
+
+        data.Email = user.email;
+        formSubmit(data, setLoader);
+
+        handleReset();
     };
 
     function handleChange(e){
@@ -22,13 +35,13 @@ export const Form = () =>{
         });
     };
 
-    /*const handleReset = () =>{
+    const handleReset = () =>{
         setData(refData);
-    };*/
+    };
 
     return(
-        <div>
-        <h4 style={{"fontWeight" : "bold"}}>Identificate, has tu comentario y envialo</h4>
+        <div style={{"backgroundColor" : "lightblue", "width" : "56vw", "height" : "50vh", "overflowY" : "auto", "overflowX" : "hidden"}}>
+        <h4 style={{"fontWeight" : "bold"}}>Hazme saber que piensas</h4>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3 row">
                     <label htmlFor="inputName" className="col-sm-2 col-form-label bold" style={{"fontWeight" : "bold"}}>Name</label>
@@ -40,19 +53,6 @@ export const Form = () =>{
                         autoComplete="off" 
                         name="Name"
                         value={data.Name}
-                        onChange={handleChange} />
-                    </div>
-                </div>
-                <div className="mb-3 row">
-                    <label htmlFor="inputEmail" className="col-sm-2 col-form-label bold" style={{"fontWeight" : "bold"}}>Email Address</label>
-                    <div className="col-sm-10">
-                        <input 
-                        type="email" 
-                        className="form-control" 
-                        id="inputEmail"
-                        autoComplete="off"
-                        name="Email"
-                        value={data.Email}
                         onChange={handleChange} />
                     </div>
                 </div>
@@ -86,6 +86,7 @@ export const Form = () =>{
                     <button className="btn btn-primary" id="disabled" type="submit">Submit</button>
                 </div>
             </form>
+            {loader && <Loader />}
         </div>
     );
 };
