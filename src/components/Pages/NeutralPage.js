@@ -1,4 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
+import './NeutralPage.css'
 
 export const NeutralPage = () =>{
 
@@ -13,13 +14,11 @@ export const NeutralPage = () =>{
         }
     };
 
-    //Poner un Footer con derechos de autor, yo que se.
-
     return(
-        <div style={{"position" : "relative", "display" : "inline-block", "textAlign" : "center"}}  >
-            <img src={BACKGROUND} style={{"width" : "100vw", "height" : "92vh"}} alt="fondo" />
-            <div style={{"position" : "absolute", "top" : "30%", "left" : "60%", "width" : "28%", "height" : "auto"}}>
-                <p style={{"fontWeight" : "bold"}}>
+        <div className="mainDiv">
+            <img src={BACKGROUND} style={{"width" : "100vw", "height" : "86vh"}} alt="fondo" />
+            <div className="centerTextDiv">
+            <p style={{"fontWeight" : "bold"}}>
                 {isAuthenticated
                 ?
                 message.registrado.text
@@ -28,6 +27,16 @@ export const NeutralPage = () =>{
                 }
             </p>
             </div>
+            <footer>
+            <h4>
+                {isAuthenticated
+                ?
+                "Puedes encontrar todo el codigo de la pagina aqui: *Github*"
+                :
+                "Logueate para que puedas acceder al codigo fuente"
+                }
+            </h4>
+            </footer>
         </div>
     );
 };

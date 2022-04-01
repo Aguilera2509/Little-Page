@@ -1,4 +1,4 @@
-export const formSubmit = (data, setLoader) => {
+export const formSubmit = (data, setLoader, setErrSending) => {
     fetch("https://formsubmit.co/ajax/ja846699@gmail.com", {
         method: "POST",
         headers: { 
@@ -12,9 +12,12 @@ export const formSubmit = (data, setLoader) => {
         return Promise.reject(res);
     })
     .then(data => {
-        alert(data.message)
-        //Cancelar la solicitus despues de cierto tiempo. Usar Abort
+        alert(data.message);
+    })
+    .catch(err => {
+        setErrSending(true);
+    })
+    .finally(() =>{
         setLoader(false);
     })
-    .catch(err => console.error(err));
 };

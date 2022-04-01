@@ -1,4 +1,4 @@
-import { Base } from "../backgroundPage/image";
+import { Base } from "../backgroundPage/BaseImagePage";
 
 export const AboutPage = () =>{
 

@@ -1,0 +1,19 @@
+.mainDiv{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.centerTextDiv{
+    position: absolute;
+    top: 30%;
+    left: 60%;
+    width: 28%;
+    height: auto;
+}
+
+footer{
+    background-color: #282c34;
+    color: white;
+    height: 5.6vh;
+}

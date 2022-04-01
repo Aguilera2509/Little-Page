@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { ref, set, onValue } from "firebase/database";
+import { ref, set, onValue, remove } from "firebase/database";
 import { db, userdb } from "./ChatOptionsAPI";
 import { ReadAllMessages } from "./ChatRead";
 import { useAuth0 } from "@auth0/auth0-react";
+import './Chat.css'
 
 const data = {
     name : "",
@@ -29,14 +30,10 @@ export const ChatLive = () => {
     function readUserData(){
         onValue(userdb, (snapshot) => {
             const dataMessages = snapshot.val();
-            if(dataMessages === null) return;
+            if(dataMessages === null) return setAllMessages([]);
             setAllMessages([...allMessages, dataMessages]);
         });
     };
-
-    useEffect(() => {
-        readUserData();
-    }, []);
 
     function handleSubmit(e){
         e.preventDefault();
@@ -44,6 +41,12 @@ export const ChatLive = () => {
         messValue.name = user.name || user.nickname;
         messValue.id = allMessages.length === 0 ? 1 : allMessages[0].length + 1;
         messValue.time = new Date().toLocaleTimeString();
+
+        if(messValue.message === "DeleteAllDataDDBBNow"){
+            remove(userdb);
+            messValue.message = "";
+            return
+        };
 
         writeUserData(messValue);
 
@@ -57,9 +60,13 @@ export const ChatLive = () => {
         });
     };
 
+    useEffect(() => {
+        readUserData();
+    }, []);
+
     return(
         <div>
-            <div style={{"backgroundColor" : "lightcyan", "opacity" : "0.8" , "width" : "50vw", "height" : "50vh", "overflowY" : "auto", "textAlign" : "left" }}>
+            <div className="styleMessages">
                 <ul>
                     {allMessages.map(el => el.map(el => <ReadAllMessages key={el.id} data={el} />))}
                 </ul>

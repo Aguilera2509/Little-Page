@@ -1,6 +1,6 @@
 export const ReadAllMessages = ({ data }) => {
     return(
-        <li style={{"listStyle" : "none"}} >
+        <li className="messageNotStyle">
             <b>{`[${data.name}]`} -- {`[${data.time}]`}</b> : {data.message}
         </li>
     );

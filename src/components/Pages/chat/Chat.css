@@ -1,0 +1,12 @@
+.styleMessages{
+    background-color: lightcyan;
+    opacity: 0.8;
+    width: 50vw;
+    height: 50vh;
+    overflow-y: auto;
+    text-align: left;
+}
+
+.messageNotStyle{
+    list-style: none;
+}

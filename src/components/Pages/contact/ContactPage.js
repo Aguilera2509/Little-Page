@@ -1,4 +1,4 @@
-import { Base } from "../backgroundPage/image";
+import { Base } from "../backgroundPage/BaseImagePage";
 import { Form } from "./ContactPageInfo.js";
 
 export const ContactPage = () =>{

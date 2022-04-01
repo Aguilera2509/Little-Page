@@ -1,8 +1,8 @@
 import { Base } from "../backgroundPage/BaseImagePage";
 
-export const HomePage = () =>{
+export const WordlePage = () =>{
 
-    const title = "Home"
+    const title = "Wordle";
 
     return(
         <Base content={title} />

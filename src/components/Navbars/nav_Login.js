@@ -21,7 +21,7 @@ return(
           <Link className="nav-link active" aria-current="page" to="/home">Home</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/widdle">Widdle</Link>
+          <Link className="nav-link" to="/wordle">Wordle</Link>
         </li>
         <li className="nav-item">
           <Link className="nav-link" to="/chat">Chat</Link>
@@ -34,7 +34,6 @@ return(
             <li><Link className="dropdown-item" to="/about">About</Link></li>
             <li><Link className="dropdown-item" to="/contact">Contact</Link></li>
             <li><hr className="dropdown-divider" /></li>
-            <li><Link className="dropdown-item" to="/settings-Account">Settings Account</Link></li>
             <li><Link className="dropdown-item" to="#logout" role="button" onClick={() => logout({ returnTo: window.location.origin })}>Logout</Link></li>
           </ul>
         </li>
