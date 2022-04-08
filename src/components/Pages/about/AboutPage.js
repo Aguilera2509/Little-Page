@@ -1,10 +1,8 @@
 import { Base } from "../backgroundPage/BaseImagePage";
+import { InfoCreator } from "./AboutInfo";
 
 export const AboutPage = () =>{
-
-    const title = "About";
-
     return(
-        <Base content={title}/>
+        <Base content={ <InfoCreator /> }/>
     );
 };

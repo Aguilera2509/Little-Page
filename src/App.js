@@ -3,8 +3,8 @@ import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import { NavbarLogin } from './components/Navbars/nav_Login';
 import { NavbarSignin } from './components/Navbars/nav_Signin';
-import { NeutralPage } from './components/Pages/NeutralPage';
-import { RoutesPage } from './components/Pages/routesPages/routes';
+import { NeutralPage } from './components/Pages/home/HomePage';
+import { RoutesPage } from './components/Pages/ROUTESPAGES/routes';
 
 function App() {
 

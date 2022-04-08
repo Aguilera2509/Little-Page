@@ -4,7 +4,7 @@ export const Base = ({ content }) =>{
 
     return(
     <div style={{"position" : "relative", "display" : "inline-block", "textAlign" : "center"}}  >
-      <img src={BACKGROUND} style={{"width" : "100vw", "height" : "92vh"}} alt="fondo" />
+      <img src={BACKGROUND} style={{"width" : "100vw", "height" : "92vh"}} alt="Background white fllowers" />
       <div style={{"position" : "absolute", "top" : "16%", "left" : "24%", "width" : "50%", "height" : "auto"}}>
         {content}
       </div>

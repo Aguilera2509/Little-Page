@@ -1,0 +1,15 @@
+.BgColor{
+    background-color: aquamarine;
+}
+
+.imgAbout{
+    width: 20%;
+    height: 28%;
+    border-radius: 50%;
+}
+
+.textareAbout{
+    width: 85%;
+    resize: none;
+    height: 28vh;
+}

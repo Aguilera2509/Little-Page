@@ -1,0 +1,20 @@
+.padre {
+    background: yellow;
+    height: 91vh;
+    /*IMPORTANTE*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.hijo {
+    width: 30%;
+    height: auto;
+}
+
+.imgWidth{
+    width: 40%;
+    height: 15%;
+    float: left;
+    border: 0.2rem solid black;
+}

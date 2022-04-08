@@ -6,6 +6,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+## Important commands to start using locally
+
+### `First > npm install`
+### `Second > npm install react-router-dom@6`
+### `Third > npm install firebase`
+### `Fourth > npm install @auth0/auth0-react`
+
+Project dependencies and you should use bootstrap cdn
+
 ### `npm start`
 
 Runs the app in the development mode.\
