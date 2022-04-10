@@ -2,7 +2,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import './profile.css';
 
 export const ProfilePage = () => {
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  const { user, isLoading } = useAuth0();
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -10,14 +10,16 @@ export const ProfilePage = () => {
 
   return (
     <div className="padre">
-      {isAuthenticated && (
       <div className="hijo">
-        <h3>Nombre: {user.name}</h3>
-        <img src={user.picture} alt={user.name} className="imgWidth"/>
-        <p>Email: {user.email}</p>
-        <p>Email Verificado: {user.email_verified ? "Si" : "No"}</p>
+        <div className="card" style={{"width": "18rem"}}>
+          <img src={user.picture} className="card-img-top imgWidth" alt={user.name} />
+          <div className="card-body">
+          <h5 className="card-title">Username: {user.name}</h5>
+          <p className="card-text">Email: {user.email}</p> 
+          <p className="card-text">Email Verified: {user.email_verified ? "Yes" : "No"}</p> 
+          </div>
+        </div>
       </div>
-    )}
     </div>
   );
 };

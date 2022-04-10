@@ -135,23 +135,10 @@ class App extends Component {
 
   render() {
     return (
-      <>
       <div className="game-area">
         <Snake snakeDots={this.state.snakeDots}/>
         <Food dot={this.state.food}/>
       </div>
-      <div className='buttonMovePhone'>
-        <p>Phone:</p>
-        <button type='button' onClick={() =>{
-          this.setState({direction: 'UP'})}}>UP</button>
-        <button type='button' onClick={() =>{
-          this.setState({direction: 'DOWN'})}}>DOWN</button>
-        <button type='button' onClick={() =>{
-          this.setState({direction: 'LEFT'})}}>LEFT</button>
-        <button type='button' onClick={() =>{
-          this.setState({direction: 'RIGHT'})}}>RIGHT</button>
-      </div>
-      </>
     );
   }
 }

@@ -9,12 +9,9 @@
   
 .hijo {
     width: 30%;
-    height: auto;
 }
 
 .imgWidth{
-    width: 40%;
-    height: 15%;
-    float: left;
+    width: 100%;
     border: 0.2rem solid black;
 }
