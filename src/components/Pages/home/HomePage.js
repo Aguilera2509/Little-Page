@@ -28,14 +28,12 @@ export const NeutralPage = () =>{
             </p>
             </div>
             <footer>
-            <h4>
                 {isAuthenticated
                 ?
-                "Puedes encontrar todo el codigo de la pagina aqui: *Github*"
+                <h4>Puedes encontrar todo el codigo fuente aqui: <a target="_blank" rel="noopener noreferrer" href="https://github.com/Aguilera2509/Little-Page">Code</a> </h4>
                 :
-                "Logueate para que puedas acceder al codigo fuente"
+                <h4>Logueate para que puedas acceder al codigo fuente</h4>
                 }
-            </h4>
             </footer>
         </div>
     );
